@@ -42,7 +42,7 @@ const LoginNew = () => {
               <button
                 onClick={async () => {
                   setLoading(true);
-                  await signup('belen+5@airpals.co', 'Vintage3', 'Belencita3');
+                  await signup('belen+6@airpals.co', 'Vintage3', 'Belencita3');
                   setLoading(false);
                 }}
               >

@@ -30,12 +30,13 @@ connectFunctionsEmulator(functions, 'localhost', 5001);
 
 //a quí necesitamos nombre también
 export const mapUserData = async (user: User) => {
-  const { uid, email } = user;
+  const { uid, email, displayName } = user;
   const token = await user.getIdToken(true);
   return {
     id: uid,
     email,
     token,
+    displayName,
   };
 };
 
@@ -66,6 +67,7 @@ const useUser = () => {
   };
 
   const logout = async () => {
+    // apolloClient.clearStore()
     return signOut(auth)
       .then(() => {
         router.push('/');
